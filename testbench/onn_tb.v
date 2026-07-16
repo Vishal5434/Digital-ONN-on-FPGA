@@ -19,43 +19,6 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-//module onn_tb #(parameter n = 15)();
-//reg clk,reset,full_tick;
-//reg [(4*n)-1:0]phi_input;
-//wire s_clk;
-//wire [(4*n)-1:0]phi_output;
-
-//onn uut (.clk(clk),.reset(reset),.full_tick(full_tick),.phi_input(phi_input),.s_clk(s_clk),.phi_output(phi_output));
-
-//initial begin
-//clk = 0;
-//forever #5 clk = ~clk;
-//end
-
-//initial begin
-//reset = 1;
-//full_tick = 0;
-////phi_input = 200'h00888888888888888088880888808888088880088888888888;
-//phi_input = 60'h886888808808888;
-//#10
-//reset = 0;
-//full_tick = 1;
-//#150
-//full_tick = 0;
-
-
-//    $monitor("T=%0t n_out=%b n_in=%b ", $time, uut.n_out, uut.n_in);
-
-
-//#800000;
-//$finish;
-//end
-
-//endmodule
-
-
-
-`timescale 1ns / 1ps
 
 module onn_tb #(parameter n = 15)();
 
@@ -132,15 +95,5 @@ initial begin
     $finish;
 end
 
-// monitor in real time
-//initial begin
-//    $monitor("T=%0t | phi_out=%h | HD0=%0d | HD1=%0d | result=%b (%s)",
-//        $time,
-//        phi_output,
-//        hamming_dist0,
-//        hamming_dist1,
-//        closest_pattern,
-//        (closest_pattern == 2'b00) ? "DIGIT 0" : "DIGIT 1");
-//end
 
 endmodule
