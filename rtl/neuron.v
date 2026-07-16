@@ -59,24 +59,7 @@ endgenerate
 
 endmodule
 
-//module neuron(input clk,s_clk,reset,full_tick,n_in,[3:0]phi_in, output [3:0]phi_out, output n_out);
-//reg [3:0]phi_reg;
-//wire [3:0] phi_calc_out; 
-//always @(posedge clk ) begin
-//    if (full_tick)
-//        phi_reg <= phi_in;   
-//     else
-//     phi_reg <= phi_calc_out;
-//end
-//assign phi_out = phi_calc_out;
-////always @(*) begin
-////    phi_reg = phi_out;
-////end
 
-//phase_calculator ph_cal_inst (s_clk,reset,n_in,n_out,phi_reg,phi_calc_out);
-//phase_controlled_osci ph_osci_inst ( reset,s_clk,phi_reg, n_out );
-
-//endmodule
 module neuron(
     input clk, s_clk, reset, full_tick, n_in,
     input  [3:0] phi_in,
