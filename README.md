@@ -65,30 +65,29 @@ The digital ONN is composed of three major modules:
 
 
 ## Implementation Workflow
-
 ```mermaid
-flowchart TB
+flowchart LR
 
-subgraph Training
+
 A[Training Patterns]
 --> B[Hebbian Learning]
 --> C[Weight Matrix]
-end
 
-subgraph Inference
 D[Input Image]
 --> E[Preprocessing]
---> F[Binarization & Downscaling]
+--> F[Binarization]
 --> G[Bipolar Encoding]
 --> H[Initialize States]
---> I[Digital ONN]
---> J[Phase Synchronization]
---> K{Converged?}
-K -- No --> I
-K -- Yes --> L[Recognized Pattern]
-end
 
-C --> I
+C --> J[Digital ONN]
+H --> J
+
+J --> K[Phase Synchronization]
+
+K --> L{Converged?}
+
+L -- No --> J
+L -- Yes --> M[Recognized Pattern]
 ```
 
 - The implementation of the Oscillatory Neural Network (ONN) is divided into two primary stages: **offline training** and **online inference**. During the training stage, the digit patterns are first converted into bipolar representations, where binary values are mapped to +1 and −1. These bipolar patterns are then used by the Hebbian learning algorithm to compute the synaptic weight matrix, which captures the associative relationships between all neurons in the network. Since the weight matrix remains constant during inference, it is computed offline and stored in a memory file that is loaded by the FPGA implementation.
@@ -100,3 +99,20 @@ C --> I
 - The network repeatedly performs weighted synaptic interactions and phase updates until synchronization is achieved. During each iteration, the control circuitry monitors the neuron states and determines whether the network has reached a stable configuration. If convergence has not yet occurred, the synchronization process continues by repeatedly updating neuron phases. Once a stable synchronized state is detected, the iterative process terminates and the final neuron states represent the retrieved memory pattern.
 
 - The retrieved neuron states are then interpreted as the recognized output image. Because the ONN operates as an associative memory, corrupted or incomplete input patterns naturally converge toward the closest stored pattern rather than reproducing the noisy input. This phase-synchronization mechanism enables robust image recognition while demonstrating the capability of oscillatory neural networks to perform parallel hardware computation using a fully digital FPGA implementation.
+
+- ## Results
+
+### Functional Simulation
+
+The proposed ONN was functionally verified using Xilinx Vivado. The simulation confirms the correct initialization of neuron states, weighted synaptic interactions, iterative phase synchronization, and convergence to the expected stored pattern. The observed output matches the reference implementation presented in the original ONN architecture.
+<p align="center">
+  <img src="images/5x3_singleinput" width="900">
+</p>
+
+<p align="center">
+<b>Figure 2.</b> Convergence of a 5x3 15 Pixel corrupted image.
+</p>
+
+The pixels have gone under synaptic synchronization and converged to the closest stored pattern i.e 0 in this case.
+
+
