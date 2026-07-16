@@ -113,20 +113,16 @@ The proposed ONN was functionally verified using Xilinx Vivado. The simulation c
 <b>Figure 2.</b> Convergence of a 5x3 15 Pixel corrupted image.
 </p>
 
-<p align="left">
-  <img src="images/corrupted_input_5x3.png" width="200">
+<p align="center">
+  <img src="images/corrupted_input_5x3.png" width="180" alt="Corrupted Input">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="images/retrieved_output" width="180" alt="Retrieved Output">
 </p>
 
-<p align="left">
-<b>Figure 3.1.</b> Corrupted image
-</p>
-
-<p align="right">
-  <img src="images/corrupted_input_5x3.png" width="200">
-</p>
-
-<p align="right">
-<b>Figure 3.1.</b> Corrupted image
+<p align="center">
+  <b>Corrupted Input</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Retrieved Output</b>
 </p>
 
 The pixels have gone under synaptic synchronization and converged to the closest stored pattern i.e 0 in this case.
