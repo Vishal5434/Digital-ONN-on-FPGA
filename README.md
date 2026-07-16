@@ -203,3 +203,29 @@ The verified Digital ONN design was successfully synthesized and implemented on 
 | Flip-Flops (FF) | 512 | 106,400 | 0.48 |
 | I/O Pins  | 124 | 125 | 99.20 |
 
+## How to Run
+
+1. Clone the repository.
+2. Open the Vivado project.
+3. Add the RTL source files and constraint file.
+4. Generate the Hebbian weight matrix using the Python script.
+5. Run functional simulation.
+6. Synthesize and implement the design.
+7. Program the Zybo Z7 FPGA and verify the output.
+   
+## Future Work
+
+- Support larger ONN architectures.
+- Integrate real-time camera input.
+- Explore Storkey learning for improved memory capacity.
+- Optimize FPGA resource utilization.
+- Investigate analog and memristive ONN implementations.
+
+## References
+
+[1] M. Abernot, T. Gil, M. Jiménez, J. Núñez, M. J. Avellido, B. Linares-Barranco, T. Gonos, T. Hardelin, and A. Todri-Sanial, *Digital Implementation of Oscillatory Neural Network for Image Recognition Applications*, Frontiers in Neuroscience, vol. 15, Art. no. 713054, Aug. 2021. DOI: 10.3389/fnins.2021.713054. :contentReference[oaicite:0]{index=0}
+
+[2] C. Delacour et al., *Oscillatory Neural Networks for Edge AI Computing*, IEEE Computer Society Annual Symposium on VLSI (ISVLSI), 2021.
+
+
+
