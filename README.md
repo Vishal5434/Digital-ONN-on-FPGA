@@ -114,17 +114,72 @@ The proposed ONN was functionally verified using Xilinx Vivado. The simulation c
 </p>
 
 <p align="center">
-  <img src="images/corrupted_input_5x3.png" width="180" alt="Corrupted Input">
+  <img src="images/corrupted_input" width="165" alt="Corrupted Input">
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="images/retrieved_output" width="180" alt="Retrieved Output">
 </p>
 
 <p align="center">
-  <b>Corrupted Input</b>
+  <b>Figure 3.1.</b>Corrupted Input</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Retrieved Output</b>
+  <b>Figure 3.2.</b>Retrieved Output</b>
 </p>
 
-The pixels have gone under synaptic synchronization and converged to the closest stored pattern i.e 0 in this case.
+  The pixels have gone under synaptic synchronization and converged to the closest stored pattern i.e 0 in this case.
+
+  
+<p align="center">
+  <img src="images/5x3_2stored" width="900">
+</p>
+
+<p align="center">
+<b>Figure 4.</b> Convergence is seen for every different input in case of 2 stored images.
+</p>
+
+<p align="center">
+  <img src="images/5x3_3stored" width="900">
+</p>
+
+<p align="center">
+<b>Figure 5.</b> We could clearly see that some inputs do not converge to a stable output in case of 3 stored images.
+</p>
+
+The simulation results show the effect of increasing the number of stored patterns in the ONN. With **two stored patterns**, the network successfully converges to the correct output for all test inputs, demonstrating reliable associative memory behavior.
+
+When the number of stored patterns is increased to **three**, the Hebbian weight matrix experiences greater interference (crosstalk) between the stored memories. This makes it harder for the neuron phases to synchronize to a single stable state, causing some input patterns to converge incorrectly or fail to converge altogether. This illustrates the trade-off between **storage capacity** and **recognition accuracy** in Oscillatory Neural Networks.
+
+Moving to 10x6 ONN simulations.
+
+<p align="center">
+  <img src="images/10x6_4stored" width="900">
+</p>
+
+<p align="center">
+<b>Figure 6.</b> Convergence is seen for all the inputs.
+</p>
+
+<p align="center">
+  <img src="images/10x6_5stored" width="900">
+</p>
+
+<p align="center">
+<b>Figure 7.</b> Convergence is not seen for all the inputs.
+</p>
+
+<p align="center">
+  <img src="images/10x6_6stored_1" width="900">
+</p>
+
+<p align="center">
+<b>Figure 8.</b> Convergence is not seen for many inputs and the converged outputs are very random.
+</p>
+The results obtained with the **10 × 6 ONN** follow the same trend observed in the **5 × 3 ONN**. When **four patterns** are stored, the network successfully converges to the correct output for all test inputs, demonstrating reliable associative memory performance.
+
+As the number of stored patterns is increased to **five** and **six**, the network begins to experience greater interference between the stored memories. This reduces the ability of the neuron phases to synchronize correctly, causing several inputs to either converge to incorrect patterns or fail to reach a stable state. The results demonstrate that increasing the storage capacity beyond a certain limit leads to reduced recognition accuracy and more random output patterns.
+
+# FPGA Implementation
+
+The verified Digital ONN design was successfully synthesized and implemented on the **Digilent Zybo Z7 FPGA** using **Xilinx Vivado**. Hardware validation confirmed the correct operation of the network, with the recognized neuron states displayed through the onboard LEDs. The implementation demonstrates that the proposed fully digital ONN can be efficiently realized on FPGA hardware while preserving its associative memory behavior.
+
 
 
