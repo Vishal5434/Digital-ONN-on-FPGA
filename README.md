@@ -173,7 +173,7 @@ Moving to 10x6 ONN simulations.
 <p align="center">
 <b>Figure 8.</b> Convergence is not seen for many inputs and the converged outputs are very random.
 </p>
-The results obtained with the **10 × 6 ONN** follow the same trend observed in the **5 × 3 ONN**. When **four patterns** are stored, the network successfully converges to the correct output for all test inputs, demonstrating reliable associative memory performance.
+The results obtained with the 10 × 6 ONN follow the same trend observed in the 5 × 3 ONN. When **four patterns** are stored, the network successfully converges to the correct output for all test inputs, demonstrating reliable associative memory performance.
 
 As the number of stored patterns is increased to **five** and **six**, the network begins to experience greater interference between the stored memories. This reduces the ability of the neuron phases to synchronize correctly, causing several inputs to either converge to incorrect patterns or fail to reach a stable state. The results demonstrate that increasing the storage capacity beyond a certain limit leads to reduced recognition accuracy and more random output patterns.
 
