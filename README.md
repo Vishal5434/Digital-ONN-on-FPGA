@@ -181,7 +181,7 @@ As the number of stored patterns is increased to **five** and **six**, the netwo
 
 The verified Digital ONN design was successfully synthesized and implemented on the **Digilent Zybo Z7 FPGA** using **Xilinx Vivado**. Hardware validation confirmed the correct operation of the network, with the recognized neuron states displayed through the onboard LEDs. The implementation demonstrates that the proposed fully digital ONN can be efficiently realized on FPGA hardware while preserving its associative memory behavior.
 <p align="center">
-  <img src="images/FPGA_1" width="300">
+  <img src="images/FPGA_1.jpeg" width="300">
 </p>
 
 <p align="center">
