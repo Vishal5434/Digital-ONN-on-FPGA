@@ -1,6 +1,25 @@
 # Digital-ONN-on-FPGA
 A fully digital Oscillatory Neural Network (ONN) implemented in Verilog on the Digilent Zybo Z7 FPGA for associative memory-based image recognition. The design uses Hebbian learning to store binary image patterns and performs pattern retrieval through phase-based neural computation.
 
+## 📑 Project Agenda
+
+- [Introduction](#digital-onn-on-fpga)
+- [What is an Oscillatory Neural Network (ONN)?](#what-is-an-oscillatory-neural-network-onn)
+- [Why Oscillatory Neural Networks?](#why-oscillatory-neural-networks)
+- [Key Features](#key-features)
+- [Architecture](#architecture)
+  - [Control Blocks](#control-blocks)
+  - [Synapse Block](#synapse-block)
+  - [Neuron Array](#neuron-array)
+  - [Overall Operation](#overall-operation)
+- [Implementation Workflow](#implementation-workflow)
+- [Results](#results)
+  - [Functional Simulation](#functional-simulation)
+  - [FPGA Implementation](#fpga-implementation)
+  - [FPGA Resource Utilization](#fpga-resource-utilization)
+- [How to Run](#how-to-run)
+- [Future Work](#future-work)
+- [References](#references)
 ## What is an Oscillatory Neural Network (ONN)?
 
 An Oscillatory Neural Network (ONN) is a neuromorphic computing architecture in which neurons are represented by coupled oscillators instead of conventional artificial neurons. Information is encoded in the relative phase relationships between oscillators rather than voltage amplitudes. Through synchronization dynamics, the network naturally converges to stored patterns, enabling efficient associative memory and pattern recognition.
