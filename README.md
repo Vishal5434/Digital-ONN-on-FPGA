@@ -1,7 +1,7 @@
 # Digital-ONN-on-FPGA
 A fully digital Oscillatory Neural Network (ONN) implemented in Verilog on the Digilent Zybo Z7 FPGA for associative memory-based image recognition. The design uses Hebbian learning to store binary image patterns and performs pattern retrieval through phase-based neural computation.
 
-## 📑 Project Agenda
+##  Project Agenda
 
 - [Introduction](#digital-onn-on-fpga)
 - [What is an Oscillatory Neural Network (ONN)?](#what-is-an-oscillatory-neural-network-onn)
